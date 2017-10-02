@@ -1,37 +1,31 @@
-'''
-    TEMPLATE FOR MACHINE LEARNING HOMEWORK
-    AUTHOR Eric Eaton, Chris Clingerman
-'''
-
+from keras.backend.tensorflow_backend import set_session
+from keras.layers import Dense, Activation, Dropout
+from keras.layers.normalization import BatchNormalization
+from keras.models import Sequential, load_model
+from keras.optimizers import SGD
+import csv
 import numpy as np
-import matplotlib.pyplot as plt
-
-from sklearn import tree
-from sklearn.metrics import accuracy_score
-
+import random as rn
+import tensorflow as tf
 
 def predict():
 
-    # Load Data
-    filename = 'data/test_potus_by_county.csv'
-    data = np.loadtxt(filename, delimiter=',')
-    Xtest = data[:, 1:]
-    ytest = np.array([data[:, 0]]).T
-    n, d = Xtest.shape
+    testfile = "test_potus_by_county.csv"
+    reader = np.genfromtxt(testfile, delimiter=',')
+    x_predict = reader[1:,:]
 
-    normalmean = []
+    m = load_model('my_model.h5')
 
-    # get classifier from build_model.py
-    y_pred = clf.predict(Xtest)
+    y_predict = m.predict(x_predict, batch_size=100, verbose=1)
 
-    normalmean.append(accuracy_score(ytest, y_pred))
+    #print out the number of Obamas
+    print(len([x for x in y_predict if x<0.5]))
 
-    meanDecisionTreeAccuracy = np.average(np.array(normalmean))
-    stddevDecisionTreeAccuracy = np.std(np.array(normalmean))
+    file = open("predictions.csv", "w")
+    file.write("Winners")
 
-    #return predictions
-
+    for x in np.nditer(y_predict):
+        file.write("x")
 
 if __name__ == "__main__":
     predict()
-

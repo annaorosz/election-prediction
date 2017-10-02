@@ -1,58 +1,73 @@
+from keras.backend.tensorflow_backend import set_session
+from keras.layers import Dense, Activation, Dropout
+from keras.layers.normalization import BatchNormalization
+from keras.models import Sequential, load_model
+from keras.optimizers import SGD
+import csv
 import numpy as np
-import matplotlib.pyplot as plt
+import random as rn
+import tensorflow as tf
 
-from sklearn import tree
-from sklearn.metrics import accuracy_score
+def buildmodel():
 
-def dt(numTrials=100):
+    trainfile = "train_potus_by_county.csv"
+    reader = np.genfromtxt(trainfile, delimiter=',')
+    x_train = reader[1:,:-1]
 
-    # Load Data
-    filename = 'data/train_potus_by_county.csv'
-    data = np.loadtxt(filename, delimiter=',')
-    Xtrain = data[:, 1:]
-    ytrain = np.array([data[:, 0]]).T
-    n, d = Xtrain.shape
+    # create shuffled ids
+    ids = list(range(x_train.shape[0]))
+    rn.shuffle(ids)
 
-    # split data into 10 "equal" parts
-    rem = n % 10
-    floor = n / 10
-    folds = []
-    for k in range(rem):
-        folds.append(floor + 1)
-    for l in range(10 - rem):
-        folds.append(floor)
+    x_train = x_train[ids]
 
-    start = []
-    stop = []
 
-    index = 0
-    for a in folds:
-        if len(start) <= 0:
-            start.append(1)
-        else:
-            start.append(stop[index - 1] + 1)
-        if len(stop) <= 0:
-            stop.append(a)
-        else:
-            stop.append(stop[index - 1] + a)
-        index += 1
+    with open(trainfile) as f:
+    reader = csv.reader(f)
+    y_train = [1. if x[-1] == 'Mitt Romney' else 0. for x in list(reader)[1:]]
+    y_train = np.array(y_train)
+    y_train = y_train[ids]  # randomize
 
-    for i in range(100):
 
-        # shuffle the data
-        idx = np.arange(n)
-        np.random.seed(13)
-        np.random.shuffle(idx)
-        X = X[idx]
-        y = y[idx]
+    # Single layer neural network model
+    model = Sequential()
+    model.add(Dense(32, input_dim=14))  # input_dim: num of features
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dense(64))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(128))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dense(256))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dense(128))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dropout(0.5))
+    model.add(Dense(64))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dense(32))
+    model.add(BatchNormalization())
+    model.add(Activation('relu'))
+    model.add(Dense(1, activation='sigmoid'))
 
-        Xtrain = X[:, :]
-        ytrain = y[:, :]
-        # train the decision tree
-        clf = tree.DecisionTreeClassifier()
-        clf = clf.fit(Xtrain, ytrain)
 
-        return clf
+    # configure the learning process
+    model.compile(loss='binary_crossentropy',
+              optimizer=SGD(lr=0.1, decay=1e-6),
+              metrics=['accuracy'])
+
+
+    # x_train and y_train are Numpy arrays --just like in the Scikit-Learn API.
+    model.fit(x_train, y_train, epochs=2000, batch_size=1000, validation_split=0.1,
+          class_weight={0:0.78, 1:0.22},
+         )
+
+    model.save('my_model.h5')
 
 if __name__ == "__main__":
-    dt()
+    buildmodel()

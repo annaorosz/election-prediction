@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01193516-aad5-4ef4-9c9c-f0bbd037fe93" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build_model.py" afterPath="$PROJECT_DIR$/build_model.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deep_neural_network_for_categorical_binary_classification.py" afterPath="$PROJECT_DIR$/deep_neural_network_for_categorical_binary_classification.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/make_predictions.py" afterPath="$PROJECT_DIR$/make_predictions.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,11 +35,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build_model.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="build_model.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/build_model.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="337">
+              <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
               <folding>
                 <element signature="e#0#56#0" expanded="true" />
               </folding>
@@ -50,14 +47,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="make_predictions.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="make_predictions.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/make_predictions.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
-              <folding>
-                <element signature="e#0#56#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="30">
+              <caret line="2" column="57" lean-forward="true" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,8 +79,8 @@
       <list>
         <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/deep_neural_network_for_categorical_binary_classification.py" />
-        <option value="$PROJECT_DIR$/build_model.py" />
         <option value="$PROJECT_DIR$/make_predictions.py" />
+        <option value="$PROJECT_DIR$/build_model.py" />
       </list>
     </option>
   </component>
@@ -243,9 +238,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="15" column="46" lean-forward="true" selection-start-line="15" selection-start-column="46" selection-end-line="15" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -303,20 +296,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/build_model.py">
+    <entry file="file://$PROJECT_DIR$/make_predictions.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#56#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="30">
+          <caret line="2" column="57" lean-forward="true" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/make_predictions.py">
+    <entry file="file://$PROJECT_DIR$/build_model.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="25" lean-forward="true" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        <state relative-caret-position="337">
+          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
           <folding>
             <element signature="e#0#56#0" expanded="true" />
           </folding>

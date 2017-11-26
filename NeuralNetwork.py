@@ -1,4 +1,3 @@
-from keras.backend.tensorflow_backend import set_session
 from keras.layers import Dense, Activation, Dropout
 from keras.layers.normalization import BatchNormalization
 from keras.models import Sequential, load_model
@@ -6,9 +5,9 @@ from keras.optimizers import SGD
 import csv
 import numpy as np
 import random as rn
-import tensorflow as tf
 
-trainfile = "train_potus_by_county.csv"
+
+trainfile = "data/train.csv"
 reader = np.genfromtxt(trainfile, delimiter=',')
 x_train = reader[1:,:-1]
 
@@ -20,7 +19,7 @@ x_train = x_train[ids]
 
 with open(trainfile) as f:
     reader = csv.reader(f)
-    y_train = [1. if x[-1] == 'Mitt Romney' else 0. for x in list(reader)[1:]]
+    y_train = [1. if x[-1] == 'Donald Trump' else 0. for x in list(reader)[1:]]
     y_train = np.array(y_train)
     y_train = y_train[ids]  # randomize
 
@@ -64,4 +63,4 @@ model.fit(x_train, y_train, epochs=10000, batch_size=1000, validation_split=0.1,
       class_weight={0:0.78, 1:0.22},
      )
 
-model.save('my_model.h5')
+model.save('nn_model.h5')

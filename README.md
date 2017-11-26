@@ -1,15 +1,10 @@
-***************************************
-Dependencies & decisions about my model
-***************************************
-
-Software Dependencies:
+##Dependencies:
 Keras
 Tensorflow
 Python 3
 
-------------------------------------------------------------------------------------------------------------------------
 
-Why I chose to use these softwares and model:
+##Background
 
 In Keras, a neural network model can be implemented efficiently and can be used with multiple different backends:
 Tensorflow, Theano, etc which all have neural network modules.
@@ -25,16 +20,12 @@ the performance was further improved.
 
 With a neural network, it is much easier to adjust some settings (compared to other ML models),
 most importantly, normalizing the data of features and accounting for skewed data.
-(Further explained in performance.txt)
 
-********************************************************************************
-Data about the expected performance of my model & how I evaluated the best model
-********************************************************************************
+
+##Data about the expected performance of the model
 
 Statistics at Epoch 10000/10000:
 loss: 0.1911, acc: 0.7397, val_loss: 0.1664, val_acc: 0.86
-
-------------------------------------------------------------------------------------------------------------------------
 
 Possibly the most important adjustment I made was to change the class-weight for each output. I noticed that in the
 training data one output was too overrepresented. (Mitt Romney was the output for 78% of the data). After modifying the

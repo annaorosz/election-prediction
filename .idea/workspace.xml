@@ -2,15 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="01193516-aad5-4ef4-9c9c-f0bbd037fe93" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/build_model.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/test_potus_by_county.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/data/train_potus_by_county.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/deep_neural_network_for_categorical_binary_classification.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/make_predictions.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/my_model.h5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/predictions.csv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/validate.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,8 +16,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+            <state relative-caret-position="360">
+              <caret line="24" column="3" lean-forward="false" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -466,8 +457,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="37" lean-forward="true" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        <state relative-caret-position="360">
+          <caret line="24" column="3" lean-forward="false" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
           <folding />
         </state>
       </provider>

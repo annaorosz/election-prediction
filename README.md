@@ -1,10 +1,10 @@
-##Dependencies:
+## Dependencies:
 Keras
 Tensorflow
 Python 3
 
 
-##Background
+## Background
 
 In Keras, a neural network model can be implemented efficiently and can be used with multiple different backends:
 Tensorflow, Theano, etc which all have neural network modules.
@@ -22,7 +22,7 @@ With a neural network, it is much easier to adjust some settings (compared to ot
 most importantly, normalizing the data of features and accounting for skewed data.
 
 
-##Data about the expected performance of the model
+## Data about the expected performance of the model
 
 Statistics at Epoch 10000/10000:
 loss: 0.1911, acc: 0.7397, val_loss: 0.1664, val_acc: 0.86

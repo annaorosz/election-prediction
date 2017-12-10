@@ -27,7 +27,7 @@ class NeuralNetwork(object):
         with open(trainfile) as f:
             reader = csv.reader(f)
             y_train = [1. if x[-1] == 'Donald Trump' else 0. for x in list(reader)[1:]]
-            y_train = np.array(y_train)
+            y_train = np.array(y_train) 
             y_train = y_train[ids]  # randomize
 
         #layers of the model
